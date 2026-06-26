@@ -1,6 +1,6 @@
-# 🚀 PyTorch Learning Journey & Breast Cancer Detection
+# 🚀 Deep Learning Journey: PyTorch & Keras Projects
 
-Welcome to my PyTorch repository! This project tracks my progress from mastering core deep learning operations to building and optimizing real-world medical imaging diagnostics.
+Welcome to my deep learning repository! This project tracks my progress from mastering core tensor operations to building and optimizing real-world diagnostics and predictive models across multiple frameworks.
 
 ---
 
@@ -8,13 +8,14 @@ Welcome to my PyTorch repository! This project tracks my progress from mastering
 
 | Topic | File / Folder | Description |
 | :--- | :--- | :--- |
-| 🔢 **01. Tensors** | `01_tensors/` | Core tensor operations, initialization, manipulation, and CPU vs. GPU acceleration. |
+| 🔢 **01. Tensors** | `01_tensors/` | Core tensor operations, initialization, manipulation, and CPU vs. GPU acceleration in PyTorch. |
 | 🧮 **02. Autograd** | `Autograd_pytorch.py` | Understanding PyTorch's automatic differentiation engine, tracking gradients, and backward passes. |
-| 🎗️ **03. Diagnostics** | `breast_cancer_detection/` | Implementing and scaling breast cancer detection models from baseline networks to advanced architectures. |
+| 🎗️ **03. Diagnostics** | `breast_cancer_detection/` | Implementing and scaling breast cancer detection models from baseline networks to advanced architectures in PyTorch. |
+| 🏦 **04. Churn Prediction** | `ann.py` | Building and optimizing an Artificial Neural Network (ANN) in Keras/TensorFlow to predict bank customer retention. |
 
 ---
 
-## 🔬 Feature Project: Breast Cancer Detection Pipeline
+## 🔬 Feature Project 1: Breast Cancer Detection Pipeline (PyTorch)
 
 This module focuses on evaluating and scaling machine learning models for automated breast cancer detection, transitioning from a basic baseline to state-of-the-art medical imaging architectures.
 
@@ -34,10 +35,21 @@ To reduce false negatives and capture subtle tissue patterns, the pipeline is be
 
 ---
 
+## 🏦 Feature Project 2: Bank Customer Churn Prediction (Keras & TensorFlow)
+
+This module implements a fully connected Artificial Neural Network (ANN) pipeline to solve a binary classification problem: predicting whether a bank customer is likely to leave (**exit**) or stay.
+
+### Pipeline Breakdown
+*   **Data Preprocessing:** Performs categorical encoding on geographical and gender data (`pd.get_dummies`), handles data splitting (80/20 train-test ratio), and applies feature scaling (`StandardScaler`) to optimize gradient descent.
+*   **Architecture:** A Sequential neural network mapping **11 input features** into **two hidden layers (6 neurons each)** using `He Uniform` initialization and `ReLU` activation, leading to a single-neuron `Sigmoid` output layer.
+*   **Training & Metrics:** Compiled with the `Adamax` optimizer and trained over **100 epochs** (batch size 10) with a 33% live validation split. The script automatically plots accuracy and loss convergence curves across training epochs.
+
+---
+
 ## 🛠️ Getting Started
 
 ### Prerequisites
-Make sure you have Python installed on your system. You can install the required dependencies by running:
+Make sure you have Python installed on your system. You can install all the required dependencies for both the PyTorch and Keras projects by running:
 
 ```bash
-pip install torch torchvision xgboost scikit-learn
+pip install torch torchvision xgboost scikit-learn tensorflow keras pandas matplotlib numpy
